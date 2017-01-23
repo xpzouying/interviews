@@ -12,4 +12,31 @@
 """
 
 
+def sum_digits(digits):
+    sum = 0
+
+    # if digits < 10:
+    #     return digits
+
+    # div_res = digits / 10
+    div_res = digits
+    while div_res != 0:
+
+        # if more than double digit
+        mod_res = div_res % 10
+        sum += mod_res
+        div_res = div_res // 10
+
+    return sum
+
+
 def add_digits(digits):
+    print 'Given digits = ', digits
+
+    sum = digits
+
+    while sum >= 10:
+        print 'Each sum: ', sum
+        sum = sum_digits(sum)
+
+    return sum
