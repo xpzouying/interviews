@@ -31,12 +31,9 @@ def sum_digits(digits):
 
 
 def add_digits(digits):
-    print 'Given digits = ', digits
-
     sum = digits
 
     while sum >= 10:
-        print 'Each sum: ', sum
         sum = sum_digits(sum)
 
     return sum
