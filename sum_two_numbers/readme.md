@@ -23,9 +23,9 @@ function define:
 def two_sum(lst, sum)
 ```
 
-input:
-    > - lst: input list
-    > - sum: expect sum
+input:  
+    - lst: input list  
+    - sum: expect sum
 
 output:
     > return list of index tuple
