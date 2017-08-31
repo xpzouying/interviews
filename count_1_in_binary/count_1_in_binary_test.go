@@ -17,4 +17,8 @@ func TestCount(t *testing.T) {
 	assertEqual(t, 1, count(1))
 	assertEqual(t, 0, count(0))
 	assertEqual(t, 1, count(4))
+
+	assertEqual(t, 32, count(-1))
+	assertEqual(t, 31, count(-2))
+	assertEqual(t, 31, count(-3))
 }

@@ -13,9 +13,19 @@ import (
 )
 
 // count 1  in binary number, return count
-func count(num uint32) uint32 {
+func count(num int32) uint32 {
 
 	var total uint32
+
+	neg := num < 0
+	if neg {
+		// if number is negtive, neg flag is highest bit and equal 1,
+		// then remove neg flag, and +1 to total
+		total = 1
+
+		// remove unsigned flag
+		num = num & (1<<31 - 1)
+	}
 
 	for {
 		if num == 0 {
