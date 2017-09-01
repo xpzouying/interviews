@@ -23,21 +23,21 @@ def two_sum(lst, sum):
 
     l = []
 
-    begin = 0
+    first = 0
     # end = len(lst)-1
 
-    for begin in range(len(lst)):
-        expect_num = sum - lst[begin]
+    for first in range(len(lst)):
+        expect_num = sum - lst[first]
 
-        second_index = begin + 1
+        second_index = first + 1
         # while second_index < len(lst) - 1:
-        for second_index in range(begin+1, len(lst)):
+        for second_index in range(first+1, len(lst)):
             # if number is greater than expect_num, then break
             if lst[second_index] > expect_num:
                 break
             elif lst[second_index] == expect_num:
                 # if equal, then find it
-                l.append((begin, second_index))
+                l.append((first, second_index))
             else:
                 continue
 
