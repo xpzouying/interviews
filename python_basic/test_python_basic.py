@@ -140,3 +140,32 @@ class PythonBasicTestCase(unittest.TestCase):
         l.append(30)
         self.assertEqual(l, [[10, 20], [10, 20], [10, 20], [10, 20], [10, 20],
                              30])
+
+
+    def test_get_even_indices_and_env_numbers_from_list(self):
+        """test_get_even_indices_and_env_numbers_from_list
+
+        Given a list of N numbers,
+        use a single list comprehension to produce a new list
+        that only contains those values that are:
+            (a) even numbers, and
+            (b) from elements in the original list that had even indices
+        """
+
+        l1 = [1, 3, 4, 6, 20, 9, 13, 15, 16, 13, 0]
+
+        l2 = [x for x in l1[::2] if x % 2 == 0]
+
+        self.assertEqual(l2, [4, 20, 16, 0])
+
+
+    def test_missing_class_method(self):
+        class DefaultDict(dict):
+            def __missing__(self, key):
+                return []
+
+        # Will the code below work? Why or why not?
+        d = DefaultDict()
+        d['florp'] = 127
+
+        self.assertEqual(d['florp'], 127)
